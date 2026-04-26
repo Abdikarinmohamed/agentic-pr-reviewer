@@ -1,0 +1,12 @@
+diff --git a/user_service.py b/user_service.py
+index 111..222 100644
+--- a/user_service.py
++++ b/user_service.py
+@@ -10,7 +10,11 @@ def get_user_discount(user):
+-    if user.is_premium:
+-        return 0.2
++    if user.is_premium and user.account_age > 30:
++        return 0.2
++    elif user.is_premium and user.account_age <= 30:
++        return 0.1
+     return 0.0
